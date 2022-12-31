@@ -7,6 +7,9 @@
 
 \usepackage{csagh}
 
+% Packages I added 
+\usepackage{minted}
+
 
 \begin{document}
 \begin{opening}
@@ -29,7 +32,7 @@ http://cs.stanford.edu/people/widom/paper-writing.html
 Note, BibTex with cs-agh.bst must be used for formatting your references!
 \end{abstract}
 
-\keywords{combinatory logic, combinators}
+\keywords{combinatory logic, combinators, programming languages}
 
 \end{opening}
 
@@ -37,11 +40,79 @@ Note, BibTex with cs-agh.bst must be used for formatting your references!
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit lacus id tortor porta, a fermentum enim lobortis. Nullam ac risus ultricies, auctor nunc eget, tristique lacus. Nullam ante lorem, volutpat at nibh ut, gravida fringilla diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra eleifend quam.
 
-\section{State of the art}
+\section{Combinators}
 
-Nam pretium a nisl in laoreet. Mauris semper diam vel tincidunt tincidunt. Mauris sed mi feugiat, laoreet eros ac, consequat libero. Praesent et maximus diam. Donec porta sit amet sapien sit amet congue. Praesent at purus sed nisl dignissim efficitur. Maecenas eget turpis feugiat ipsum viverra ultricies. Cras at posuere erat. Aenean maximus, augue non fringilla fermentum, leo tellus venenatis arcu, vel feugiat dui risus et purus. Phasellus turpis leo, tincidunt quis odio aliquam, ornare aliquam ligula. 
+\subsection{Combinator Lambda Expressions}
 
-\section{Contribution}
+\begin{table}[!htb]
+  \begin{tabular}{cc}
+     \hline
+     {\bf Combinator} & {\bf Lambda Expression} \\ 
+     \hline I & $\lambda$a.a \\
+     K & $\lambda$ab.a \\
+     W & $\lambda$ab.abb \\
+     C & $\lambda$abc.acb \\
+     B & $\lambda$abc.a(bc) \\
+     S & $\lambda$abc.ac(bc) \\
+     D & $\lambda$abcd.ab(cd) \\
+     B$_1$ & $\lambda$abcd.a(bcd) \\
+     $\Psi$ & $\lambda$abcd.a(bc)(bd) \\
+     $\Phi$ & $\lambda$abcd.a(bd)(cd) \\
+     D$_2$ & $\lambda$abcde.a(bd)(ce) \\
+     E & $\lambda$abcde.ab(cde) \\
+     $\Phi_1$ & $\lambda$abcde.a(bde)(cde) \\
+     Ê & $\lambda$abcdefg.a(bde)(cfg) \\
+     \hline
+  \end{tabular}
+  \end{table}
+
+\subsection{Combinators Across Programming Languages}
+
+\subsubsection{Combinators in Haskell}
+
+\begin{table}[!htb]
+  \begin{tabular}{ccc}
+     \hline
+     {\bf } & {\bf Name} & {\bf Library} \\ 
+     \hline 
+     I & \mintinline{haskell}{id} & Prelude \\
+     K & \mintinline{haskell}{const} & Prelude \\
+     W & \mintinline{haskell}{join} & Control.Monad \\
+     C & \mintinline{haskell}{flip} & Prelude \\
+     B & \mintinline{haskell}{(.)} & Prelude \\
+     S & \mintinline{haskell}{(<*>)} / \mintinline{haskell}{ap} & Control.Applicative \\
+     B$_1$ & \mintinline{haskell}{(.:)} & Data.Composition \\
+     $\Psi$ & \mintinline{haskell}{on} & Data.Function \\
+     $\Phi$ & \mintinline{haskell}{liftA2} & Control.Applicative \\
+     A & \mintinline{haskell}{($)} & Prelude \\
+     \hline
+  \end{tabular}
+  \end{table}
+
+\subsubsection{Combinators in APL}
+
+\subsubsection{Combinators in J}
+
+\subsubsection{Combinators in BQN}
+
+\section{Contributions}
+
+\subsection{Missing Combinators}
+
+\subsection{Combinator Hierarchy}
+
+\subsubsection{D$_2$ Family}
+
+\subsubsection{E Family}
+
+\subsubsection{B Family}
+
+\subsubsection{D$_2$, E, B Families Combined}
+
+\begin{figure}[!htb]
+  \centerline{\includegraphics[scale = 0.5]{./combinator-d2-e-b-connected.png}}
+  \caption{D$_2$, E, B combinator hierarchy.} % \label{fig:2}
+\end{figure}
 
 Nam fringilla, ante in varius imperdiet, metus dolor facilisis tellus, eget viverra tortor neque in massa. Vivamus eget viverra justo. Duis et bibendum eros. Etiam nibh arcu, condimentum vitae laoreet eget, vulputate sed arcu. Fusce scelerisque, ex tristique consequat blandit, nulla arcu imperdiet sem, vel scelerisque urna lorem nec elit. Nam vestibulum dui vel volutpat congue.
 
