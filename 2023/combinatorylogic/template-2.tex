@@ -1,0 +1,94 @@
+%&pdflatex --translate-file=cp1250pl
+
+\documentclass[10pt]{article}
+
+\usepackage[pdftex]{graphicx}
+\graphicspath{{./pdf/}}
+
+\usepackage{csagh}
+
+
+
+\begin{document}
+\begin{opening}
+
+\title{Paper's title}
+
+\author[Institution, address, the first author's e-mail address]{Author-1}
+
+\author[Institution, address, the second author's e-mail address]{Author-2}
+\autor{Author-3} % the third author will have the last affiliation
+                 % assigned, that is identical to the second author's
+
+\author[Institution1, address1, the fourth author's e-mail address1
+        Institution2, address2, the fourth author's e-mail address2,]{Author-4}
+
+\begin{abstract}
+  An abstract goes here\ldots
+	
+The structure of the paper does not have to be followed, it is just
+a reasonable example. If you're writing a paper for the first time, please consult:
+http://cs.stanford.edu/people/widom/paper-writing.html
+
+Note, BibTex with cs-agh.bst must be used for formatting your references!
+\end{abstract}
+
+\keywords{keyword1, keyword2, keyword3}
+
+\end{opening}
+
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit lacus id tortor porta, a fermentum enim lobortis. Nullam ac risus ultricies, auctor nunc eget, tristique lacus. Nullam ante lorem, volutpat at nibh ut, gravida fringilla diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra eleifend quam.
+
+\section{State of the art}
+
+Nam pretium a nisl in laoreet. Mauris semper diam vel tincidunt tincidunt. Mauris sed mi feugiat, laoreet eros ac, consequat libero. Praesent et maximus diam. Donec porta sit amet sapien sit amet congue. Praesent at purus sed nisl dignissim efficitur. Maecenas eget turpis feugiat ipsum viverra ultricies. Cras at posuere erat. Aenean maximus, augue non fringilla fermentum, leo tellus venenatis arcu, vel feugiat dui risus et purus. Phasellus turpis leo, tincidunt quis odio aliquam, ornare aliquam ligula. 
+
+\section{Contribution}
+
+Nam fringilla, ante in varius imperdiet, metus dolor facilisis tellus, eget viverra tortor neque in massa. Vivamus eget viverra justo. Duis et bibendum eros. Etiam nibh arcu, condimentum vitae laoreet eget, vulputate sed arcu. Fusce scelerisque, ex tristique consequat blandit, nulla arcu imperdiet sem, vel scelerisque urna lorem nec elit. Nam vestibulum dui vel volutpat congue.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=.4]{surfz}
+\caption{An example of including the PDF graphics in the text ---
+function $z=\frac{\sin(x^2+y^2)}{x^2+y^2}$}
+\label{rys:surf}
+\end{figure}
+
+Nam viverra maximus tortor, sed accumsan odio iaculis et. Nulla facilisi. Aliquam eget elit massa. Nulla volutpat vel eros ac eleifend. Ut cursus, risus ac laoreet iaculis, nibh sapien mollis sem, sit amet luctus arcu nibh nec arcu. Donec sit amet nisi id quam convallis ultrices. Nullam sagittis ultrices volutpat. 
+
+\section{Comparison/Experiments/\ldots}
+
+Nullam ac efficitur turpis. Integer fringilla sapien sit amet luctus porta. In eu lobortis diam, at ornare tortor. Phasellus pretium est non quam ultricies, eget molestie massa rhoncus. Vivamus pulvinar tempor sem ut pulvinar. Aliquam tempus elementum dictum.
+
+\begin{table}[!ht]
+\centering
+\caption{Sample table with sample data}
+\label{tabl.1}
+  \begin{tabular}{|l<{.}|c|>{$}c<{$}|r|}
+                                 \hline
+   1 & a~   & \alpha &  10\,000\\\hline
+   2 & bb   & \beta  &  25\,000\\\hline
+   3 & ccc  & \gamma & 100\,000\\\hline
+   4 & dddd & \delta & 125\,000\\\hline
+  \end{tabular}
+\end{table}
+
+Etiam gravida odio in ante venenatis, a tincidunt tortor eleifend. Phasellus sollicitudin ut ex at bibendum. Proin et laoreet dui, quis luctus ante. Praesent condimentum orci pretium ante sollicitudin, in facilisis odio iaculis. 
+
+\section{Conclusion}
+
+Aliquam quis libero aliquet, porttitor magna tincidunt, pellentesque lectus. Quisque a lacus tortor. Phasellus vitae mi vulputate, tincidunt urna nec, rutrum urna. In malesuada leo iaculis, tristique neque id, bibendum ipsum. Suspendisse lacus turpis, euismod sit amet neque non, ullamcorper porta ligula.
+
+\begin{acknowledgements}
+ The research presented in this paper was partially supported by \ldots
+\end{acknowledgements}
+
+\nocite{*} %REMOVE
+
+\bibliographystyle{cs-agh}
+\bibliography{bibliography}
+
+\end{document}
